@@ -9,6 +9,27 @@ const Register = () => {
         method="post"
         className="flex flex-col gap-2 m-5 border p-5 rounded border-slate-300"
       >
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          className="border-[1px] rounded border-slate-200"
+        />
+        <label htmlFor="lastname">Lastname</label>
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          className="border-[1px] rounded border-slate-200"
+        />
+        <label htmlFor="document">DNI</label>
+        <input
+          type="number"
+          name="document"
+          id="document"
+          className="border-[1px] rounded border-slate-200"
+        />
         <label htmlFor="email">Email</label>
         <input
           type="email"
