@@ -5,6 +5,7 @@ import Login from "../auth/Login.jsx";
 import Home from "../home/Home.jsx";
 import About from "../common/About.jsx";
 import { Component } from "react";
+import AuthLayout from "../layouts/AuthLayout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,18 @@ const router = createBrowserRouter([
         path: "about",
         Component: About,
       },
+    ],
+  },
+  //Se agrega un layout para las rutas de autenticacion
+  {
+    path: "auth",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "login",
+        Component: Login,
+      },
+      { path: "register", Component: Register },
     ],
   },
 ]);

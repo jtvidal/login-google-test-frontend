@@ -5,12 +5,12 @@ import './App.css'
 function App() {
 
   return (
-    <>
+    <div className='h-screen flex flex-col w-full'>
       <Header />
-      <main>
+      <main className='h-screen'>
         <Outlet />
       </main>
-    </>
+    </div>
   )
 }
 
