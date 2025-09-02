@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 const Login = () => {
+  
   return (
     <div className="flex flex-col justify-center items-center h-full mt-4">
       <h2>LOGIN</h2>
