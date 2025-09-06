@@ -7,7 +7,7 @@ const Register = () => {
       <form
         action=""
         method="post"
-        className="flex flex-col gap-2 m-5 border p-5 rounded border-slate-300"
+        className="flex flex-col gap-2 w-8/10 sm:w-3/5 md:w-1/3 border p-5 rounded border-slate-300"
       >
         <label htmlFor="name">Name</label>
         <input
@@ -21,13 +21,6 @@ const Register = () => {
           type="text"
           name="lastname"
           id="lastname"
-          className="border-[1px] rounded border-slate-200"
-        />
-        <label htmlFor="document">DNI</label>
-        <input
-          type="number"
-          name="document"
-          id="document"
           className="border-[1px] rounded border-slate-200"
         />
         <label htmlFor="email">Email</label>
@@ -44,6 +37,11 @@ const Register = () => {
           id="pass"
           className="border-[1px] rounded border-slate-200"
         />
+        <label htmlFor="role">Role</label>
+        <select className="border-[1px] rounded border-slate-200 p-1 mb-3" name="role" id="role">
+          <option value="user">Client</option>
+          <option value="admin">Establishment</option>
+        </select>
         <button type="submit" className="p-2 bg-slate-500 text-slate-50 rounded cursor-pointer hover:bg-slate-300 hover:text-slate-700 duration-100">register</button>
       </form>
       <Link to={"/auth/login"}>Login</Link>
