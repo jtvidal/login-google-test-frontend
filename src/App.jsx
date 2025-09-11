@@ -10,6 +10,9 @@ function App() {
       <main className='h-screen'>
         <Outlet />
       </main>
+      <footer>
+      <div className='text-center p-3 bg-slate-200'>© 2025 Google Auth Test. All rights reserved.</div>
+      </footer>
     </div>
   )
 }

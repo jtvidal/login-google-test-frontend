@@ -12,7 +12,8 @@ const Login = () => {
         <input type="password" name="pass" id="pass" className="border-[1px] rounded border-slate-200" />
         <button type="submit" className="p-2 bg-slate-500 text-slate-50 rounded cursor-pointer hover:bg-slate-300 hover:text-slate-700 duration-100">login</button>
       </form>
-      <Link to={'/auth/register'}>Register</Link>
+      <div><button className="cursor-pointer hover:underline">Login with Google</button></div>
+      <Link to={"/auth/register"}>Register</Link>
     </div>
   );
 };
