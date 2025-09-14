@@ -8,7 +8,7 @@ const Register = () => {
     lastname: "",
     email: "",
     password: "",
-    role: "client",
+    role: "",
   });
   const [errors, setErrors] = useState({});
 
@@ -48,12 +48,14 @@ const Register = () => {
           data.errors.forEach((e) => {
             dataErrors[e.field] = e.message;
           });
+          console.log(dataErrors);
         }
         setErrors(dataErrors);
         throw new Error("Network response was not ok");
+      } else {
+        console.log("User registered successfully:", data);
+        navigate("/auth/login");
       }
-      console.log("User registered successfully:", data);
-      navigate("/auth/login");
     } catch (error) {
       console.error("Error registering user:", error.code || error.message);
     }
@@ -122,9 +124,11 @@ const Register = () => {
             value={formData.role}
             onChange={handleOnChange}
           >
-            <option value="user">Client</option>
-            <option value="admin">Establishment</option>
+            <option value="">Select a role</option>
+            <option value="client">Client</option>
+            <option value="establishment">Establishment</option>
           </select>
+          {errors.role && <p className="text-red-500 text-sm">{errors.role}</p>}
           <button
             type="submit"
             className="p-2 bg-slate-500 text-slate-50 rounded cursor-pointer hover:bg-slate-300 hover:text-slate-700 duration-100"
@@ -134,12 +138,15 @@ const Register = () => {
         </form>
         <div className="self-center mt-4">
           <button className="cursor-pointer hover:underline">
-            Register with Google
+            Sign in with Google
           </button>
         </div>
       </div>
       <div>
-        <Link to={"/auth/login"}>Login</Link>
+        <p>
+          Already have an account?
+          <Link to={"/auth/login"} className="text-blue-800"> Login</Link>
+        </p>
       </div>
     </div>
   );

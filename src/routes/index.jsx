@@ -4,6 +4,7 @@ import Register from "../components/auth/Register.jsx";
 import Login from "../components/auth/Login.jsx";
 import Home from "../home/Home.jsx";
 import About from "../components/common/About.jsx";
+import RoleSelection from "../components/common/RoleSelection.jsx";
 import AuthLayout from "../layouts/AuthLayout.jsx";
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: "about",
         Component: About,
       },
+      {
+        path: "role-selection",
+        Component: RoleSelection
+      }
     ],
   },
   //Se agrega un layout para las rutas de autenticacion
