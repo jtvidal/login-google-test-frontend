@@ -137,7 +137,14 @@ const Register = () => {
           </button>
         </form>
         <div className="self-center mt-4">
-          <button className="cursor-pointer hover:underline">
+          <button
+            className="cursor-pointer hover:underline"
+            onClick={() =>
+              (window.location.href = `${
+                import.meta.env.VITE_BACKEND_URL
+              }/auth/google`)
+            }
+          >
             Sign in with Google
           </button>
         </div>
@@ -145,7 +152,10 @@ const Register = () => {
       <div>
         <p>
           Already have an account?
-          <Link to={"/auth/login"} className="text-blue-800"> Login</Link>
+          <Link to={"/auth/login"} className="text-blue-800">
+            {" "}
+            Login
+          </Link>
         </p>
       </div>
     </div>
